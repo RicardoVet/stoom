@@ -1,0 +1,7 @@
+br/com/stoom/service/impl/EnderecoServiceImpl.class
+br/com/stoom/controller/EnderecoController.class
+br/com/stoom/handler/Handler.class
+br/com/stoom/repository/EnderecoRepository.class
+br/com/stoom/model/Endereco.class
+br/com/stoom/service/EnderecoService.class
+br/com/stoom/StoomApplication.class
