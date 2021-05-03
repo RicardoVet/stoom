@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+
+  app:
+    image: "stoom-image:0.1"
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: "stoom-container"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+  mysql:
+    image: "mysql:8.0.24"
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "Drive123!@#"
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mysql", "-u root", "-p Drive123!@#" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
