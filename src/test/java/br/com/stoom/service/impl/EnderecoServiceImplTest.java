@@ -39,6 +39,8 @@ class EnderecoServiceImplTest {
 	@Test
 	public void testandoSalvar() {
 		Endereco endereco = new Endereco();
+		endereco.setLatitude("123");
+		endereco.setLongitude("456");
 		when(enderecoRepository.save(endereco)).thenReturn(endereco);
 		enderecoServiceTest.salvar(endereco);
 		verify(enderecoRepository, times(1)).save(endereco);

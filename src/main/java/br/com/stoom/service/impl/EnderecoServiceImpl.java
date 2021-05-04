@@ -20,7 +20,7 @@ public class EnderecoServiceImpl implements EnderecoService {
 	
 	@Override
 	public Endereco salvar(final Endereco endereco) {
-		if(endereco != null && endereco.getLatitude() == null && endereco.getLongitude() == null) {
+		if(endereco != null && endereco.getLatitude().isEmpty() && endereco.getLongitude().isEmpty()) {
 			this.localizador.buscarInformacoes(endereco);
 		}
 		return this.enderecoRepository.save(endereco);
